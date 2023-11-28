@@ -13,6 +13,8 @@
 		0C22FF3A2AF2C41700913EC3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C22FF392AF2C41700913EC3 /* Preview Assets.xcassets */; };
 		0C22FF3C2AF2C41700913EC3 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22FF3B2AF2C41700913EC3 /* Persistence.swift */; };
 		0C22FF3F2AF2C41700913EC3 /* ToyLocalAndCloud.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C22FF3D2AF2C41700913EC3 /* ToyLocalAndCloud.xcdatamodeld */; };
+		0C22FF4B2AF9B71400913EC3 /* Word+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22FF492AF9B71400913EC3 /* Word+CoreDataClass.swift */; };
+		0C22FF4C2AF9B71400913EC3 /* Word+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22FF4A2AF9B71400913EC3 /* Word+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		0C22FF3E2AF2C41700913EC3 /* ToyLocalAndCloud.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToyLocalAndCloud.xcdatamodel; sourceTree = "<group>"; };
 		0C22FF402AF2C41700913EC3 /* ToyLocalAndCloud.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToyLocalAndCloud.entitlements; sourceTree = "<group>"; };
 		0C22FF412AF2C41700913EC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C22FF492AF9B71400913EC3 /* Word+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0C22FF4A2AF9B71400913EC3 /* Word+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Word+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				0C22FF402AF2C41700913EC3 /* ToyLocalAndCloud.entitlements */,
 				0C22FF412AF2C41700913EC3 /* Info.plist */,
 				0C22FF3D2AF2C41700913EC3 /* ToyLocalAndCloud.xcdatamodeld */,
+				0C22FF492AF9B71400913EC3 /* Word+CoreDataClass.swift */,
+				0C22FF4A2AF9B71400913EC3 /* Word+CoreDataProperties.swift */,
 				0C22FF382AF2C41700913EC3 /* Preview Content */,
 			);
 			path = ToyLocalAndCloud;
@@ -148,9 +154,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C22FF3C2AF2C41700913EC3 /* Persistence.swift in Sources */,
+				0C22FF4B2AF9B71400913EC3 /* Word+CoreDataClass.swift in Sources */,
 				0C22FF352AF2C41500913EC3 /* ContentView.swift in Sources */,
 				0C22FF3F2AF2C41700913EC3 /* ToyLocalAndCloud.xcdatamodeld in Sources */,
 				0C22FF332AF2C41500913EC3 /* ToyLocalAndCloudApp.swift in Sources */,
+				0C22FF4C2AF9B71400913EC3 /* Word+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

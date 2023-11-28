@@ -13,9 +13,12 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+        for i in 0..<10 {
+            let newItem = Word(context: viewContext)
+            newItem.definition = "Definiton for word \(i)"
+            newItem.sortNumber = Int64(i)
+            newItem.word = "Word \(i)"
+            newItem.status = 1
         }
         do {
             try viewContext.save()
@@ -32,9 +35,20 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "ToyLocalAndCloud")
+        
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
+        let cloudURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                      .appendingPathComponent("cloud.sqlite")
+        let localURL = FileManager.default.urls(for:.documentDirectory, in:.userDomainMask).first!
+                      .appendingPathComponent("local.sqlite")
+        let cloudDesc = NSPersistentStoreDescription(url: cloudURL)
+        cloudDesc.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.toy.com")
+//        cloudDesc.configuration = "ToyLocalAndCloud"
+        let localDesc = NSPersistentStoreDescription(url: localURL)
+//        localDesc.configuration = "local"
+        container.persistentStoreDescriptions = [cloudDesc,localDesc]
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -52,5 +66,9 @@ struct PersistenceController {
             }
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
+        /*
+         if store is empty then load some test data. this loads it to the cloud
+         */
+        
     }
 }
